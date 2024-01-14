@@ -254,13 +254,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 100046, guid: 814f4326a50812947b2469896d89a215, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 814f4326a50812947b2469896d89a215, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.84
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 814f4326a50812947b2469896d89a215, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.8
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 814f4326a50812947b2469896d89a215, type: 3}
       propertyPath: m_LocalPosition.z
@@ -392,7 +396,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -961,9 +965,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31201bd54bfd8e3448a3ecdd30756e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 6626133456624480321, guid: feb0a5cd8fea0f8469426c18e38be00c,
-    type: 3}
-  powerUpPrefab: {fileID: 5720463961403694215, guid: 3dc9d4bfd82176e479a1704ed021f61f,
+  obstaclePrefabs:
+  - {fileID: 3916312528661113549, guid: 40dd25c0a94024e45a7ecd1ba462cd7a, type: 3}
+  - {fileID: 1798103920753753048, guid: 5f8fa50fbf0c9c54dbe3b8b37062045a, type: 3}
+  - {fileID: 2363778436233851593, guid: bdc7f2ac5fa5f8d4fbd41f37616b26b5, type: 3}
+  scorePrefab: {fileID: 8370278122041085823, guid: ecfce59c1bb014d40a866615c6346062,
     type: 3}
 --- !u!4 &949687430
 Transform:

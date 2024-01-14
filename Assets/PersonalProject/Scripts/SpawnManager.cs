@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject obstaclePrefab;
-    public GameObject powerUpPrefab;
+    public GameObject[] obstaclePrefabs;
+    public GameObject scorePrefab;
 
-    private Vector3 obstaclePos = new Vector3(25, 0, 0);
-    private float maxYPos = 13;
-    private float minYPos = 5;
-
-    private float startDelay = 2;
-    private float repeatRate = 2;
+    private Vector3 obstaclePos = new Vector3(25, 2, 0);
+    private float maxPosY = 13;
+    private float minPosY = 5;
 
     private PlayerController playerControllerScript;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
-        InvokeRepeating("SpawnPower", startDelay, repeatRate);
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+        StartCoroutine(SpawnObstacle());
+        StartCoroutine(SpawnScore());
     }
 
     // Update is called once per frame
@@ -29,24 +26,25 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    public void SpawnObstacle()
+    IEnumerator SpawnScore()
     {
-        if (playerControllerScript.gameOver == false)
+        while (playerControllerScript.gameOver == false)
         {
-            Instantiate(obstaclePrefab, obstaclePos, Quaternion.identity);
+            int randomRepeat = Random.Range(5, 15);
+            Vector3 spawnPos = new Vector3(25, Random.Range(minPosY, maxPosY), 0);
+            Instantiate(scorePrefab, spawnPos, scorePrefab.transform.rotation);
+            yield return new WaitForSeconds(randomRepeat);
         }
     }
 
-    public void SpawnPower()
+    IEnumerator SpawnObstacle()
     {
-        if (playerControllerScript.gameOver == false)
+        while (playerControllerScript.gameOver == false)
         {
-            Instantiate(powerUpPrefab, RandomPos(), Quaternion.identity);
+            int randomRepeat = Random.Range(1, 4);
+            int randomObstacle = Random.Range(0, obstaclePrefabs.Length);
+            Instantiate(obstaclePrefabs[randomObstacle], obstaclePos, obstaclePrefabs[randomObstacle].transform.rotation);
+            yield return new WaitForSeconds(randomRepeat);
         }
-    }
-
-    public Vector3 RandomPos()
-    {
-        return new Vector3(Random.Range (minYPos, maxYPos), 0);
     }
 }
