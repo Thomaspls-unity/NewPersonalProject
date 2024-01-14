@@ -963,6 +963,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 6626133456624480321, guid: feb0a5cd8fea0f8469426c18e38be00c,
     type: 3}
+  powerUpPrefab: {fileID: 5720463961403694215, guid: 3dc9d4bfd82176e479a1704ed021f61f,
+    type: 3}
 --- !u!4 &949687430
 Transform:
   m_ObjectHideFlags: 0
