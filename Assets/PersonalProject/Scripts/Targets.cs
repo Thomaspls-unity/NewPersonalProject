@@ -5,6 +5,8 @@ using UnityEngine;
 public class Targets : MonoBehaviour
 {
     public ParticleSystem explosionParticles;
+    public Camera cam;
+    public RaycastHit hitInfo;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,12 +16,14 @@ public class Targets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void OnMouseDown()
-    {
-        Instantiate(explosionParticles, transform.position, explosionParticles.transform.rotation);
-        Destroy(gameObject);
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hitInfo))
+        {
+            if(hitInfo.transform.gameObject.CompareTag("ScoreUp"))
+            {
+                Instantiate(explosionParticles, hitInfo.transform.position, explosionParticles.transform.rotation);
+                Destroy(hitInfo.transform.gameObject);
+            }
+        }
     }
 }

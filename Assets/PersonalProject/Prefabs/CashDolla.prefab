@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 7351860736323375384}
   - component: {fileID: 8627223668198565832}
   - component: {fileID: 4790446987991954913}
-  - component: {fileID: -1634581910407474807}
   - component: {fileID: -7525005570314861510}
-  - component: {fileID: 672100715546528025}
   m_Layer: 0
   m_Name: CashDolla
   m_TagString: ScoreUp
@@ -86,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-1634581910407474807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8370278122041085823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84b58b18c14388947ba0ed30d762ab68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionParticles: {fileID: 3199346384015752365, guid: 307229a5540374aae98859caad2128a3,
-    type: 3}
 --- !u!114 &-7525005570314861510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,24 +96,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd402019325cbb40ad75a3bb2842ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &672100715546528025
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8370278122041085823}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.69566107, y: 1.2263764, z: 0.6225668}
-  m_Center: {x: -0.10940194, y: 0.5855834, z: 0.09389585}
