@@ -16,13 +16,16 @@ public class Targets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hitInfo))
+        if (Input.GetMouseButton(0))
         {
-            if(hitInfo.transform.gameObject.CompareTag("ScoreUp"))
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hitInfo))
             {
-                Instantiate(explosionParticles, hitInfo.transform.position, explosionParticles.transform.rotation);
-                Destroy(hitInfo.transform.gameObject);
+                if (hitInfo.transform.gameObject.CompareTag("ScoreUp"))
+                {
+                    Instantiate(explosionParticles, hitInfo.transform.position, explosionParticles.transform.rotation);
+                    Destroy(hitInfo.transform.gameObject);
+                }
             }
         }
     }
