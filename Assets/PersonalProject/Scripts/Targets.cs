@@ -16,6 +16,11 @@ public class Targets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TargetClicked();
+    }
+
+    private void TargetClicked()
+    {
         if (Input.GetMouseButton(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
