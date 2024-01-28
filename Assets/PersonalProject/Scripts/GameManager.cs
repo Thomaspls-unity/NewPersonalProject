@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public UnityEvent OnPause;
+    public UnityEvent OnResume;
     public static GameManager Instance;
+
+    private bool isPaused;
 
     private void Awake()
     {
@@ -34,6 +38,27 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PauseScreen()
+    {
+        if (!isPaused)
+        {
+            isPaused = true;
+            OnPause?.Invoke();
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            isPaused = false;
+            OnResume?.Invoke();
+            Time.timeScale = 1f;
+        }
+    }
+
+    public bool IsPaused()
+    {
+        return isPaused;
     }
 
     public void ChangeScene(string sceneToLoad)

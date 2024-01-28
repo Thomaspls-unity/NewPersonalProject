@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ScoreTarget : Targets
 {
+    private int score;
+    private int highScore;
+
     // Start is called before the first frame update
     void Start()
     {
